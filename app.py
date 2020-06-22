@@ -13,7 +13,7 @@ app.config.update(
     MAIL_PORT = '465',
     MAIL_USE_SSL = True,
     MAIL_USERNAME = 'infogooddeed',
-    MAIL_PASSWORD=  'gooddeed@2020'
+    MAIL_PASSWORD=  ''
 )
 mail = Mail(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/deeds'
