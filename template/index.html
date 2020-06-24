@@ -4,8 +4,8 @@
 <head>
 
      <title>Hydro - Landing Page Template</title>
-     <!--
-Hydro Template
+     <!-- 
+Hydro Template 
 http://www.templatemo.com/tm-509-hydro
 -->
      <meta charset="UTF-8">
@@ -20,14 +20,21 @@ http://www.templatemo.com/tm-509-hydro
      <link rel="stylesheet" href= "{{ url_for('static', filename='css/font-awesome.min.css') }} ">
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    
+
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="{{ url_for('static',filename='css/templatemo-style.css') }} ">
+
 </head>
 
 <body>
 
      <!-- PRE LOADER -->
-
+     <!-- <section class="preloader">
+          <div class="spinner">
+               <span class="spinner-rotate"></span>
+          </div>
+     </section> -->
 
 
      <!-- MENU -->
@@ -61,7 +68,7 @@ http://www.templatemo.com/tm-509-hydro
                          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                          <li class="section-btn"><a href="#" class="post-deed-color" data-toggle="modal"
                                    data-target="#modal-form">Post Deed</a></li>
-                                   <!-- <li><a href=""><button class="btn btn-md">Post Deed</button></a></li> -->
+                         <!-- <li><a href=""><button class="btn btn-md">Post Deed</button></a></li> -->
                     </ul>
                </div>
 
@@ -81,7 +88,8 @@ http://www.templatemo.com/tm-509-hydro
                               <p class="sayer-top">-a gooddeeder</p>
                               <!-- <a href="#about" class="btn section-btn smoothScroll">Post Your Deed</a> -->
 
-                             <a data-toggle="modal" data-target="#modal-form" > <button class="btn btn-lg post-deed-btn">Post Your Deed</button></a>
+                              <a data-toggle="modal" data-target="#modal-form"> <button
+                                        class="btn btn-lg post-deed-btn">Post Your Deed</button></a>
                               <!-- <span>
                                    CALL US (+66) 010-020-0340
                                    <small>For any inquiry</small>
@@ -495,14 +503,14 @@ http://www.templatemo.com/tm-509-hydro
                <div class="row">
 
                     <!-- <div class="col-md-5 col-sm-12">
-                         <div class="footer-thumb footer-info">
+                         <div class="footer-thumb footer-info"> 
                               <h2>Hydro Company</h2>
                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                          </div>
                     </div> -->
 
-                    <!-- <div class="col-md-2 col-sm-4">
-                         <div class="footer-thumb">
+                    <!-- <div class="col-md-2 col-sm-4"> 
+                         <div class="footer-thumb"> 
                               <h2>Company</h2>
                               <ul class="footer-link">
                                    <li><a href="#">About Us</a></li>
@@ -513,8 +521,8 @@ http://www.templatemo.com/tm-509-hydro
                          </div>
                     </div> -->
 
-                    <!-- <div class="col-md-2 col-sm-4">
-                         <div class="footer-thumb">
+                    <!-- <div class="col-md-2 col-sm-4"> 
+                         <div class="footer-thumb"> 
                               <h2>Services</h2>
                               <ul class="footer-link">
                                    <li><a href="#">Pricing</a></li>
@@ -524,8 +532,8 @@ http://www.templatemo.com/tm-509-hydro
                          </div>
                     </div> -->
 
-                    <!-- <div class="col-md-3 col-sm-4">
-                         <div class="footer-thumb">
+                    <!-- <div class="col-md-3 col-sm-4"> 
+                         <div class="footer-thumb"> 
                               <h2>Find us</h2>
                               <p>123 Grand Rama IX, <br> Krung Thep Maha Nakhon 10400</p>
                          </div>
@@ -589,34 +597,50 @@ http://www.templatemo.com/tm-509-hydro
                                         <!-- TAB PANES -->
                                         <div class="tab-content" style="padding: 0px;">
                                              <div role="tabpanel" class="tab-pane fade in active" id="sign_up">
-                                                  <form action="/contact" method="post">
-                                                       <input type="text" class="form-control" name="name"
-                                                            placeholder="Name" required>
+                                                  <form action="index.html" method="POST">
+                                                       <input id='user-name' type="text" class="form-control"
+                                                            name="name" placeholder="Name">
+                                                       <p class="name-req"></p>
 
-                                                            <div class="modal-upload-sec">
-                                                                 <label class="modal-label-upload-photo" for="img">Upload your photo</label>
-                                                                 <input class="modal-upload-photo" type="file" id="img-user" name="img" accept="image/*">
-                                                            </div>
+                                                       <div class="modal-upload-sec">
+                                                            <label class="modal-label-upload-photo" for="img">Upload
+                                                                 your photo</label>
+                                                            <input class="modal-upload-photo" type="file" id="img-user"
+                                                                 name="img-user" accept="image/*">
+                                                            <p class="img-user-req"></p>
 
-                                                       <input type="telephone" class="form-control" name="phone"
-                                                            placeholder="Contact" required>
-                                                       <input type="email" class="form-control" name="email"
-                                                            placeholder="Email" required>
+                                                       </div>
+
+                                                       <input type="telephone" id='user-number' class="form-control"
+                                                            name="telephone" placeholder="Contact">
+                                                       <input id='user-email' type="email" class="form-control"
+                                                            name="email" placeholder="Email">
+                                                       <p class="email-req"></p>
+
                                                        <!-- <input type="password" class="form-control" name="password"
                                                             placeholder="Password" required> -->
 
 
-                                                       <textarea class="form-control" id="user_deed" rows="5"
-                                                            placeholder="Enter your good deed" name="desc"></textarea>
+                                                       <textarea class="form-control" id="user-deed" rows="5"
+                                                            placeholder="Enter your good deed"></textarea>
+                                                            <p class="total-ch">Characters:<span class="character-number"></span></p>
+                                                       <p class="user-deed-req"></p>
 
-                                                            <div class="modal-upload-sec">
-                                                            <label class="modal-label-upload-photo" for="img">Upload your deed</label>
-                                                            <input class="modal-upload-photo" type="file" id="img-deed" name="img" accept="image/*">
+
+                                                       <div class="modal-upload-sec">
+                                                            <label class="modal-label-upload-photo" for="img">Don't forget to upload a photo of
+                                                                 your deed</label>
+                                                            <input class="modal-upload-photo" type="file" id="img-deed"
+                                                                 name="img" accept="image/*">
+                                                                 
+                                                            <p class="img-deed-req"></p>
+
                                                        </div>
                                                        <!-- <input type="submit" class="form-control" name="submit"
                                                             value="Post Deed"> -->
-                                                            <button class="btn btn-dark btn-md post-modal-btn">Post Deed</button>
-                                                  </form>
+                                                       <button class="btn btn-dark btn-md post-modal-btn"
+                                                            id='modal-post-btn'>Post Deed</button>
+                                                       </form>
                                              </div>
 
                                              <!-- <div role="tabpanel" class="tab-pane fade in" id="sign_in">
@@ -645,11 +669,118 @@ http://www.templatemo.com/tm-509-hydro
      <!-- SCRIPTS -->
      <script src="{{ url_for('static', filename='js/jquery.js') }} "></script>
      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }} "></script>
-     <script src="{{ url_for('static', filename='jquery.stellar.min.js') }} "></script>
-     <script src="{{ url_for('static', filename='jquery.magnific-popup.min.js') }}"></script>
-     <script src="{{ url_for('static', filename='smoothscroll.js') }}"></script>
-     <script src="{{ url_for('static', filename='custom.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }} "></script>
+     <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/smoothscroll.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
+     <script>
+          $(document).ready(function () {
+               $("#user-name").keyup(function () {
+                    $(".name-req").html("")
+               })
+               $("#user-email").keyup(function () {
+                    $(".email-req").html("")
+               })
+               $("#user-deed").keyup(function () {
+                    $('.character-number').html( $('#user-deed').val().length).css({ 'font-size': '12px', 'color': 'forestgreen', 'margin': '0%', 'text-align': 'right', 'margin-left':'5px' })
+                    if($('#user-deed').val().length <= 288){
+                         $('.user-deed-req').html('Please enter your deed in less than 289 characters').css({ 'font-size': '12px', 'color': 'forestgreen', 'margin': '1%', 'text-align': 'justify' })
+                         $('.total-ch').css({'color':'forestgreen'})
+                         $('.character-number').css({'color':'forestgreen'})
+
+                    }
+                    else{
+                         $('.user-deed-req').html('Limit exceeded - More than 288 characters').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         $('.total-ch').css({'color':'red'})
+                         $('.character-number').css({'color':'red'})
+                    }
+                    // $(".user-deed-req").html("")
+               })
+               $("#img-user").click(function () {
+                    $(".img-user-req").html("")
+               })
+               $("#img-deed").click(function () {
+                    $(".img-deed-req").html("")
+               })
+
+               $(document).on('click', '#modal-post-btn', function () {
+                    console.log('clicked')
+                    var name = $('#user-name').val()
+                    var imgUser = $('#img-user')[0]
+                    var email = $('#user-email').val()
+                    var validatedEmail = validateEmail(email)
+                    var userDeed = $('#user-deed').val()
+                    var contact = $('#user-number').val()
+                    var imgDeed = $('#img-deed')[0]
+                    console.log(name, imgUser.files.length, email, contact, imgDeed.files.length)
+
+
+                    if (!name.replace(/\s/g, '').length == false && imgUser.files.length != 0 && validatedEmail && !userDeed.replace(/\s/g, '').length == false && !contact.replace(/\s/g, '').length == false && imgDeed.files.length != 0 && userDeed.length <= 288) {
+                         console.log('good to post')
+                         postDeed()
+                    }
+
+                    else {
+                         console.log('something missing')
+                         if (userDeed.length>288) {
+                              $('.user-deed-req').html('Enter deed in less than 288 characters').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         }
+                         if (!name.replace(/\s/g, '').length) {
+                              $('.name-req').html('Name cannot be empty').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         }
+                         if (!email.replace(/\s/g, '').length || validatedEmail == false) {
+                              $('.email-req').html('Please enter a valid email').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         }
+                         if (!userDeed.replace(/\s/g, '').length) {
+                              $('.user-deed-req').html('Please enter your deed').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         }
+                         if (imgUser.files.length == 0) {
+                              $('.img-user-req').html('Please upload your image').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         }
+                         if (imgDeed.files.length == 0) {
+                              $('.img-deed-req').html('Please upload image of your deed').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         }
+
+                    }
+
+
+
+               })
+
+               function validateEmail(t) {
+                    var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+                    return testEmail.test(t)
+               }
+          })
+
+     </script>
+
+     <!-- <script>
+          var a = [{classname:'A'},{classname:'B'},{classname:'C'},{classname:'A'},{classname:'B'},{classname:'C'},{classname:'A'},{classname:'B'},{classname:'C'},{classname:'A'},{classname:'B'},{classname:'C'}]
+
+          var newObj = {}
+          var newList = []
+
+          for(let i=0; i<a.length; i++){
+               console.log('test')
+               var key = a[i].classname
+               newList.push(key)
+               console.log('list =', newList)
+
+               if(newObj[key]){
+                    newObj[key] += 1
+                    console.log(newObj)
+               }
+               else{
+                    newObj[key] = 1
+                    console.log(newObj)
+
+               }
+          }
+     </script> -->
+
+    
 
 
 
