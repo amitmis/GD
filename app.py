@@ -13,7 +13,7 @@ app.config.update(
     MAIL_PORT = '465',
     MAIL_USE_SSL = True,
     MAIL_USERNAME = 'infogooddeed',
-    MAIL_PASSWORD=  ''
+    MAIL_PASSWORD=  'gooddeed@2020'
 )
 mail = Mail(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/deeds'
@@ -29,7 +29,12 @@ class Deed_post(db.Model):
 
 @app.route("/")
 def home():
+
     return render_template("index.html")
+
+
+
+
 
 @app.route("/contact", methods = ['GET', 'POST'])
 def contact():
@@ -48,7 +53,8 @@ def contact():
                           recipients=[email],
                           body= "Email send successful"
                           )
-    return render_template("index.html")
+        data = Deed_post.query.all()
+    return render_template("index.html",data=data)
 
 
 
