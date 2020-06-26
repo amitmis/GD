@@ -113,8 +113,8 @@ a:focus {
 }
 
 .section-btn {
-  /* background: #ce3232; */
-  background: linear-gradient(to right, #434343, #3f444c);
+  background: #8abe06;
+  /* background: linear-gradient(to right, #434343, #3f444c); */
   border: 0;
   border-radius: 10px;
   color: #ffffff;
@@ -265,7 +265,11 @@ section {
 }
 
 .custom-navbar .section-btn:hover {
-  background: linear-gradient(to left, #434343, #000000);
+  background: #fff
+}
+
+.custom-navbar .section-btn:hover a {
+  color: #8abe06
 }
 
 .custom-navbar .section-btn a {
@@ -1208,4 +1212,8 @@ footer span,
 
 .white-heading{
   color: #fff;
+}
+
+.about-sec{
+  margin-bottom: 5%;
 }
