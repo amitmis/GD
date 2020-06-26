@@ -4,21 +4,25 @@ Hydro Template
 
 http://www.templatemo.com/tm-509-hydro
 
-*/  
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600');
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600");
 
 body {
   background: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
-
 
 /*---------------------------------------
    TYPOGRAPHY              
 -----------------------------------------*/
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 300;
   line-height: inherit;
   letter-spacing: -1px;
@@ -59,7 +63,6 @@ strong {
   font-weight: 500;
 }
 
-
 /*---------------------------------------
    GENERAL               
 -----------------------------------------*/
@@ -85,7 +88,9 @@ a {
   text-decoration: none !important;
 }
 
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   color: #ce3232;
   outline: none;
 }
@@ -109,7 +114,7 @@ a:hover, a:active, a:focus {
 
 .section-btn {
   /* background: #ce3232; */
-  background: linear-gradient(to right, #434343, #3f444c);;
+  background: linear-gradient(to right, #434343, #3f444c);
   border: 0;
   border-radius: 10px;
   color: #ffffff;
@@ -123,21 +128,29 @@ a:hover, a:active, a:focus {
 
 .section-btn:hover,
 .section-btn:focus {
-  background: #00F260;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00f260; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-color: transparent;
   color: #393939;
 }
 
 .overlay {
   /* background: #00F260;  */
-   /* fallback for old browsers */
+  /* fallback for old browsers */
   /* background: -webkit-linear-gradient(to right, #0575E6, #00F260);  */
-   /* Chrome 10-25, Safari 5.1-6 */
+  /* Chrome 10-25, Safari 5.1-6 */
   /* background: linear-gradient(to right, #0575E6, #00F260);  */
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background:linear-gradient(to right, #000, #fff);  ;
+  background: linear-gradient(to right, #000, #fff);
   opacity: 0.7;
   position: absolute;
   width: 100%;
@@ -152,7 +165,6 @@ section {
   padding-bottom: 80px;
   text-align: center;
 }
-
 
 /*---------------------------------------
      PRE LOADER              
@@ -179,7 +191,7 @@ section {
 }
 
 .spinner:before {
-  content: '';
+  content: "";
   box-sizing: border-box;
   position: absolute;
   top: 50%;
@@ -191,17 +203,20 @@ section {
   border-radius: 50%;
   border: 1px solid #575757;
   border-top-color: #ffffff;
-  animation: spinner .9s linear infinite;
+  animation: spinner 0.9s linear infinite;
 }
 
 @-webkit-@keyframes spinner {
-  to {transform: rotate(360deg);}
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spinner {
-  to {transform: rotate(360deg);}
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 
 /*---------------------------------------
     MENU              
@@ -242,12 +257,12 @@ section {
   /* background: #000000;   */
   /* fallback for old browsers */
   /* background: -webkit-linear-gradient(to right, #434343, #000000);  */
-   /* Chrome 10-25, Safari 5.1-6 */
+  /* Chrome 10-25, Safari 5.1-6 */
   /* background: linear-gradient(to right, #434343, #000000); */
-   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.custom-navbar .section-btn:hover{
+.custom-navbar .section-btn:hover {
   background: linear-gradient(to left, #434343, #000000);
 }
 
@@ -298,10 +313,10 @@ section {
   border-color: transparent;
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
   .custom-navbar {
     border-bottom: 0;
-    background: 0 0; 
+    background: 0 0;
   }
 
   .custom-navbar.top-nav-collapse {
@@ -325,14 +340,12 @@ section {
   }
 }
 
-
-
 /*---------------------------------------
     HOME              
 -----------------------------------------*/
 
 #home {
-  background: url('../images/home-bg.jpg') no-repeat center center;
+  background: url("../images/home-bg.jpg") no-repeat center center;
   background-size: cover;
   vertical-align: middle;
   display: -webkit-box;
@@ -367,7 +380,8 @@ section {
   color: #ffffff;
 } */
 
-.home-info .section-btn:hover, .home-info .section-btn:focus {
+.home-info .section-btn:hover,
+.home-info .section-btn:focus {
   background: aliceblue;
   border-color: aliceblue;
   color: black;
@@ -378,14 +392,12 @@ section {
   vertical-align: middle;
   color: #f9f9f9;
   font-weight: 500;
-  margin-left: 20px; 
+  margin-left: 20px;
 }
 
 .home-info span small {
   display: block;
 }
-
-
 
 /*---------------------------------------
     ABOUT              
@@ -425,8 +437,6 @@ section {
   background: #1f1f1f;
   box-shadow: none;
 }
-
-
 
 /*---------------------------------------
     WORK             
@@ -499,8 +509,6 @@ section {
   opacity: 1;
 }
 
-
-
 /*---------------------------------------
     BLOG             
 -----------------------------------------*/
@@ -515,7 +523,7 @@ section {
 }
 
 #blog-header {
-  background: url('../images/blog-header-bg.jpg') no-repeat center center;
+  background: url("../images/blog-header-bg.jpg") no-repeat center center;
   background-size: cover;
   display: -webkit-box;
   display: -webkit-flex;
@@ -586,9 +594,17 @@ section {
 }
 
 .blog-info .section-btn:hover {
-  background: #00F260;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00f260; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #ffffff;
 }
 
@@ -645,16 +661,22 @@ section {
   font-size: 18px;
 }
 
-
-
 /*---------------------------------------
     CONTACTS             
 -----------------------------------------*/
 
 #contact {
-  background: #00F260;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #00f260; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #contact .section-title h2 {
@@ -679,7 +701,7 @@ section {
   border: 0;
   border-radius: 5px;
   box-shadow: none;
-  color: rgba(20,20,20,0.5);
+  color: rgba(20, 20, 20, 0.5);
   font-size: 14px;
   font-weight: normal;
   margin-bottom: 15px;
@@ -692,26 +714,32 @@ section {
 }
 
 #contact select {
-  color: rgba(20,20,20,0.5);
+  color: rgba(20, 20, 20, 0.5);
 }
 
-#contact input[type='submit'] {
+#contact input[type="submit"] {
   background: #ce3232;
   border-radius: 100px;
   color: #ffffff;
   font-weight: 500;
 }
 
-
-
 /*---------------------------------------
    FOOTER              
 -----------------------------------------*/
 
 footer {
-  background: #000000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #434343,
+    #000000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #434343,
+    #000000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   position: relative;
   /* padding-top: 80px; */
   padding-bottom: 60px;
@@ -748,7 +776,7 @@ footer span,
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 5em;
   padding-top: 3em;
 }
@@ -768,7 +796,6 @@ footer span,
   display: inline-block;
   margin-left: 10px;
 }
-
 
 /*---------------------------------------
    SOCIAL ICON              
@@ -798,7 +825,6 @@ footer span,
   color: #ce3232;
 }
 
-
 /*---------------------------------------
     MODAL FORM             
 -----------------------------------------*/
@@ -814,9 +840,17 @@ footer span,
 }
 
 .modal-dialog .modal-content {
-  background: #000000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #434343,
+    #000000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #434343,
+    #000000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border: none;
   border-radius: 2px;
   text-align: center;
@@ -824,7 +858,8 @@ footer span,
   padding: 2em;
 }
 
-.modal-header, .modal-footer {
+.modal-header,
+.modal-footer {
   border-bottom: 0;
   padding: 0;
 }
@@ -868,11 +903,11 @@ footer span,
   margin-right: 0;
 }
 
-.modal-dialog .nav-tabs > li.active > a, 
-.modal-dialog .nav-tabs > li.active > a:hover, 
+.modal-dialog .nav-tabs > li.active > a,
+.modal-dialog .nav-tabs > li.active > a:hover,
 .modal-dialog .nav-tabs > li.active > a:focus,
-.modal-dialog .nav>li>a:focus, 
-.modal-dialog .nav>li>a:hover {
+.modal-dialog .nav > li > a:focus,
+.modal-dialog .nav > li > a:hover {
   color: #ffffff;
   background-color: transparent;
   border: none;
@@ -897,7 +932,6 @@ footer span,
 .modal-dialog form .form-control:focus {
   /* border-color: #ffffff; */
   background: transparent;
-
 }
 
 .modal-dialog form input[type="submit"] {
@@ -908,20 +942,17 @@ footer span,
   margin-top: 20px;
 }
 
-
 /*---------------------------------------
    RESPONSIVE STYLES              
 -----------------------------------------*/
 
 @media screen and (max-width: 1170px) {
-
   .custom-navbar .navbar-nav.navbar-nav-first {
     margin-left: inherit;
   }
 }
 
 @media screen and (max-width: 991px) {
-
   h3 {
     font-size: 1.2em;
   }
@@ -980,7 +1011,6 @@ footer span,
 }
 
 @media only screen and (min-width: 640px) and (max-width: 767px) {
-
   #blog-header {
     height: 100vh;
   }
@@ -996,7 +1026,6 @@ footer span,
 }
 
 @media screen and (max-width: 767px) {
-
   .custom-navbar {
     background: #ffffff;
     -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
@@ -1063,7 +1092,6 @@ footer span,
 }
 
 @media screen and (max-width: 639px) {
-
   h1 {
     font-size: 2em;
   }
@@ -1076,36 +1104,35 @@ footer span,
     position: relative;
     bottom: 6em;
   }
-  
 }
 
-.quote-top{
+.quote-top {
   color: aliceblue;
 }
 
-.sayer-top{
+.sayer-top {
   color: aliceblue;
   text-align: center;
 }
 
-.underline-sec{
+.underline-sec {
   border-bottom: solid 4px purple;
   width: 20%;
   margin: 5% 1%;
 }
 
-.underline-sec-center-heading{
+.underline-sec-center-heading {
   border-bottom: solid 4px purple;
   width: 10%;
   margin: 0% 0%;
   display: inline-flex;
 }
 
-.modal-post-deed{
+.modal-post-deed {
   background: #fff !important;
 }
 
-.modal-heading{
+.modal-heading {
   color: #3f444c !important;
 }
 
@@ -1116,50 +1143,52 @@ footer span,
   margin: 2% 0%;
 }
 
-.post-modal-btn:hover{
+.post-modal-btn:hover {
   background: #3f444c;
   color: #fff;
   border: solid 1px #3f444c;
-
 }
 
-.modal-label-upload-photo{
+.modal-label-upload-photo {
   float: left;
 }
 
-.modal-upload-photo{
+.modal-upload-photo {
   display: inline !important;
 }
 
-.modal-upload-sec{
+.modal-upload-sec {
   margin: 4% 0%;
 }
 
-.post-deed-btn{
- 
+.post-deed-btn {
   background: #fff;
   color: #3f444c;
   border: solid 1px;
 }
 
-.post-deed-btn:hover{
+.post-deed-btn:hover {
   background: #3f444c;
   color: #fff;
 }
 
-.form-control{
+.form-control {
   margin: 1% 0% !important;
 }
 
-.character-number{
+.character-number {
   float: right;
 }
 
-.total-ch{
-  float: right;
+.total-ch {
+  float: right !important;
   font-size: 12px;
   color: forestgreen;
   text-align: right;
 }
 
-
+.modal-logo {
+  width: 10%;
+  position: absolute;
+  margin: -2% -50% 0%;
+}

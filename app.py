@@ -1,6 +1,6 @@
 #!/home/amit/anaconda3/envs/sci/bin/python3
 # import pymysql
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_mail import Mail
@@ -52,4 +52,4 @@ def contact():
 
 
 
-app.run(debug=True)
+app.run(port=5012,debug=True)
