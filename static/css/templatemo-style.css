@@ -1388,3 +1388,31 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
+
+
+.deed-number-section{
+  display: flex;
+  font-size: 18px;
+  color: #fff;
+}
+
+.deed-number-section p{
+  font-size: 18px;
+  color: #fff;
+}
+
+.deed-number-text{
+  padding: 5%;
+  font-size: 20px;
+}
+
+.counter-count{
+  padding: 5%;
+  background: #8aeb06;
+  font-size: 28px;
+  border-radius: 50%;
+}
+
+form {
+  background: #fff;
+}
