@@ -54,8 +54,15 @@ def contact():
 def enterDeed():
 
     req = request.get_json()
+    name = request.json['name']
+    email = request.json['email']
+    location = request.json['location']
+    deed = request.json['userDeed']
+    userImage = request.json['imageUser']
+    deedImage = request.json['imageDeed']
 
     print(req)
+    # print('name =',name,email)
 
     res = make_response(jsonify({'message':'JSON Received'}),200)
 

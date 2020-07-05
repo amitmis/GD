@@ -386,6 +386,7 @@ http://www.templatemo.com/tm-509-hydro
                                    <div>
                                         <p class="deeder-name">Prashant Awasthi <span class="post-date">23/jun</span>
                                         </p>
+                                        <span class="deeder-location">Kanpur</span>
                                    </div>
                                    <p class="deed-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni
                                         quis omnis repellat! Quia sequi necessitatibus adipisci iste eos eius impedit
@@ -833,12 +834,12 @@ http://www.templatemo.com/tm-509-hydro
                          $('.character-number').css({ 'color': 'red' })
                     }
                })
-               $("#img-user").click(function () {
-                    $(".img-user-req").html("")
-               })
-               $("#img-deed").click(function () {
-                    $(".img-deed-req").html("")
-               })
+               // $("#img-user").click(function () {
+               //      $(".img-user-req").html("")
+               // })
+               // $("#img-deed").click(function () {
+               //      $(".img-deed-req").html("")
+               // })
 
                $(document).on('click', '#modal-post-btn', function () {
                     console.log('clicked')
@@ -875,12 +876,12 @@ http://www.templatemo.com/tm-509-hydro
                          if (!location.replace(/\s/g, '').length) {
                               $('.location-req').html('Please enter your location').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
                          }
-                         if (imgUser.files.length == 0) {
-                              $('.img-user-req').html('Please upload your image').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
-                         }
-                         if (imgDeed.files.length == 0) {
-                              $('.img-deed-req').html('Please upload image of your deed').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
-                         }
+                         // if (imgUser.files.length == 0) {
+                         //      $('.img-user-req').html('Please upload your image').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         // }
+                         // if (imgDeed.files.length == 0) {
+                         //      $('.img-deed-req').html('Please upload image of your deed').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         // }
                     }
                })
 
@@ -993,7 +994,7 @@ http://www.templatemo.com/tm-509-hydro
                '<div style="text-align: left;">' +
                '<div>' +
                ' <p class="deeder-name">' + deed.name + ' <span class="post-date">' + deed.date + '</span>' +
-               '</p>' +
+               '</p>' + '<span class="deeder-location">'+ deed.location +'</span>' +
                '</div>' +
                '<p class="deed-desc">' + deed.deed +
                '</p>' +

@@ -1256,7 +1256,7 @@ footer span,
   font-size: 18px;
   font-weight: 500;
   color: #000;
-  margin: 1%;
+  margin: 1% 1% 0%;
 }
 
 .deed-desc {
@@ -1276,6 +1276,9 @@ footer span,
 
 .post-date {
   float: right;
+}
+
+.deeder-location{
   margin: 1%;
 }
 
