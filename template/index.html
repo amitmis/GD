@@ -851,12 +851,12 @@ http://www.templatemo.com/tm-509-hydro
                     var validatedEmail = validateEmail(email)
                     var userDeed = $('#user-deed').val()
                     var imgDeed = $('#img-deed')[0]
-                    console.log(name, imgUser.files.length, email, imgDeed.files.length)
+                    console.log(name, imgUser.files.length, email, imgDeed.files.length, userDeed)
 
 
                     if (!name.replace(/\s/g, '').length == false && imgUser.files.length != 0 && !name.replace(/\s/g, '').length == false && validatedEmail && !userDeed.replace(/\s/g, '').length == false && imgDeed.files.length != 0 && userDeed.length <= 288) {
                          console.log('good to post')
-                         postDeed(name, email, imgUser, imgDeed, userDeed)
+                         postDeed(name, email, location, imgUser, imgDeed, userDeed)
                     }
 
                     else {
@@ -891,7 +891,7 @@ http://www.templatemo.com/tm-509-hydro
                }
 
                function postDeed(name, email, location, imgUser, imgDeed, userDeed) {
-                    console.log('submitted')
+                    console.log('submitted =', userDeed, imgUser)
 
                     var entry = {
                          name: name,

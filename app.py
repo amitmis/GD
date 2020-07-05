@@ -57,7 +57,7 @@ def enterDeed():
     name = request.json['name']
     email = request.json['email']
     location = request.json['location']
-    deed = request.json['userDeed']
+    userDeed = request.json['deed']
     userImage = request.json['imageUser']
     deedImage = request.json['imageDeed']
 
