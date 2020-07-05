@@ -851,20 +851,26 @@ http://www.templatemo.com/tm-509-hydro
 
                $(document).on('click', '#modal-post-btn', function () {
                     console.log('clicked')
+
+     //                var input1 = document.querySelector('#img-user')
+     // //    var data = new FormData()
+     //    console.log(input1.files[0])
+
+
                     var name = $('#user-name').val()
-                    var imgUser = $('#img-user')[0]
+                    var imgUser = document.querySelector('#img-user')
                     var email = $('#user-email').val()
                     var location = $('#user-location').val()
                     // postDeed(name,email)
                     var validatedEmail = validateEmail(email)
                     var userDeed = $('#user-deed').val()
-                    var imgDeed = $('#img-deed')[0]
-                    console.log(name, imgUser.files.length, email, imgDeed.files.length, userDeed)
+                    var imgDeed = document.querySelector('#img-deed')
+                    console.log(name, imgUser.files[0], email, imgDeed.files[0], userDeed)
 
 
-                    if (!name.replace(/\s/g, '').length == false && imgUser.files.length != 0 && !name.replace(/\s/g, '').length == false && validatedEmail && !userDeed.replace(/\s/g, '').length == false && imgDeed.files.length != 0 && userDeed.length <= 288) {
+                    if (!name.replace(/\s/g, '').length == false &&  !name.replace(/\s/g, '').length == false && validatedEmail && !userDeed.replace(/\s/g, '').length == false &&  userDeed.length <= 288) {
                          console.log('good to post')
-                         postDeed(name, email, location, imgUser, imgDeed, userDeed)
+                         postDeed(name, email, location, imgUser.files[0], imgDeed.files[0], userDeed)
                     }
 
                     else {
@@ -901,27 +907,31 @@ http://www.templatemo.com/tm-509-hydro
                function postDeed(name, email, location, imgUser, imgDeed, userDeed) {
                     console.log('submitted =', userDeed, imgUser)
 
-                    var entry = {
-                         name: name,
-                         email: email,
-                         location: location,
-                         imageUser: imgUser,
-                         imageDeed: imgDeed,
-                         deed: userDeed
-                    }
-                    // var formData = new FormData();
-                    // // formData.append("file", val1);
-                    // formData.append('name', name)
-                    // formData.append("email", email);
-                    // console.log("image-id =", val3)
+                    // var entry = {
+                    //      name: name,
+                    //      email: email,
+                    //      location: location,
+                    //      imageUser: imgUser,
+                    //      imageDeed: imgDeed,
+                    //      deed: userDeed
+                    // }
+                    var formData = new FormData();
+                    // formData.append("file", val1);
+                    formData.append('name', name)
+                    formData.append("email", email);
+                    formData.append("location", location);
+                    formData.append("imageUser", imgUser);
+                    formData.append("imageDeed", imgDeed);
+                    formData.append("deed", userDeed);
                     fetch(`${window.origin}/enterDeed`, {
                          method: 'POST',
                          credentials: 'include',
-                         body: JSON.stringify(entry),
+                         // body: JSON.stringify(entry),
+                         body: formData,
                          cache: 'no-cache',
-                         headers: new Headers({
-                              'content-type': 'application/json'
-                         })
+                         // headers: new Headers({
+                         //      'content-type': 'application/json'
+                         // })
                     }).then(res => {
                          console.log('result', res)
                          if (res.status == 200) {
