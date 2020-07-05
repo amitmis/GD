@@ -356,7 +356,7 @@ section {
 -----------------------------------------*/
 
 #home {
-  /* background: url("../images/hex.png") no-repeat center center; */
+  background: url("../images/hex.png") no-repeat center center;
   background-size: cover;
   vertical-align: middle;
   display: -webkit-box;
@@ -1363,7 +1363,7 @@ img {vertical-align: middle;}
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  /* background-color: #717171; */
 }
 
 /* Fading animation */
@@ -1408,9 +1408,9 @@ img {vertical-align: middle;}
 
 .counter-count{
   padding: 5%;
-  background: #8aeb06;
-  font-size: 28px;
-  border-radius: 50%;
+  /* background: #8aeb06; */
+  font-size: 64px !important;
+  /* border-radius: 50%; */
 }
 
 form {

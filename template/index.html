@@ -293,19 +293,25 @@ http://www.templatemo.com/tm-509-hydro
 
                               <div class="mySlides">
                                    <div class="numbertext"></div>
-                                   <img src="static/images/work-image1.jpg" style="width:100%">
+                                   <img src="static/images/c4.png" style="width:100%">
                                    <div class="text"></div>
                               </div>
 
                               <div class="mySlides">
                                    <div class="numbertext"></div>
-                                   <img src="static/images/work-image2.jpg" style="width:100%">
+                                   <img src="static/images/c1.png" style="width:100%">
                                    <div class="text"></div>
                               </div>
 
                               <div class="mySlides">
                                    <div class="numbertext"></div>
-                                   <img src="static/images/work-image3.jpg" style="width:100%">
+                                   <img src="static/images/c3.png" style="width:100%">
+                                   <div class="text"></div>
+                              </div>
+
+                              <div class="mySlides">
+                                   <div class="numbertext"></div>
+                                   <img src="static/images/c2.png" style="width:100%">
                                    <div class="text"></div>
                               </div>
 
@@ -319,6 +325,7 @@ http://www.templatemo.com/tm-509-hydro
                               <span class="dot" onclick="currentSlide(1)"></span>
                               <span class="dot" onclick="currentSlide(2)"></span>
                               <span class="dot" onclick="currentSlide(3)"></span>
+                              <span class="dot" onclick="currentSlide(4)"></span>
                          </div>
 
                          <!-- <div class="about-image">
@@ -346,6 +353,29 @@ http://www.templatemo.com/tm-509-hydro
                </div>
 
                <div class="card-test">
+
+
+                    {% for i in data %}
+                    <div class="row">
+                         <div class="col-md-2">
+                              <img class="profile-img" src="{{ url_for('static',filename=i.fname)}}"
+                                   alt="User Profile Image">
+                         </div>
+                         <div class="col-md-10">
+                              <div style="text-align: left;">
+                                   <div>
+                                        <p class="deeder-name">{{i.Name}}<span class="post-date">{{i.Date}}</span>
+                                        </p>
+                                   </div>
+                                   <p class="deed-desc">{{i.Text}}
+                                   </p>
+                                   <p class="deed-img"><img src="{{ url_for('static',filename=i.fname)}}" alt=""></p>
+
+                              </div>
+                         </div>
+                    </div>
+
+                    {% endfor %}
 
                     <div class="row">
                          <div class="col-md-2">
@@ -638,7 +668,10 @@ http://www.templatemo.com/tm-509-hydro
 
                                         <div class="tab-content" style="padding: 0px;">
                                              <div role="tabpanel" class="tab-pane fade in active" id="sign_up">
-                                                  <form action="/index" method="POST">
+                                                  <!-- <form action="/contact" method="POST"  enctype="multipart/form-data"> -->
+
+
+                                                  <div>
                                                        <input id='user-name' type="text" class="form-control"
                                                             name="name" placeholder="Name">
                                                        <p class="name-req"></p>
@@ -652,14 +685,16 @@ http://www.templatemo.com/tm-509-hydro
 
                                                        </div>
 
-                                                       <!-- <input type="telephone" id='user-number' class="form-control"
-                                                            name="telephone" placeholder="Contact"> -->
+                                                       <input id='user-location' type="text" class="form-control"
+                                                            name="location" placeholder="Location">
+                                                       <p class="location-req"></p>
+
+
                                                        <input id='user-email' type="email" class="form-control"
                                                             name="email" placeholder="Email">
                                                        <p class="email-req"></p>
 
-                                                       <!-- <input type="password" class="form-control" name="password"
-                                                            placeholder="Password" required> -->
+
 
 
                                                        <textarea class="form-control" id="user-deed" rows="5"
@@ -674,30 +709,19 @@ http://www.templatemo.com/tm-509-hydro
                                                                  forget to upload a photo of
                                                                  your deed</label>
                                                             <input class="modal-upload-photo" type="file" id="img-deed"
-                                                                 name="img" accept="image/*">
+                                                                 name="img-deed" accept="image/*">
 
                                                             <p class="img-deed-req"></p>
 
                                                        </div>
-                                                       <!-- <input type="submit" class="form-control" name="submit"
-                                                            value="Post Deed"> -->
-                                                       <button class="btn btn-dark btn-md post-modal-btn"
+
+                                                       <button type="button" class="btn btn-dark btn-md post-modal-btn"
                                                             id='modal-post-btn'>Post Deed</button>
-                                                  </form>
+                                                       <!-- </form> -->
+                                                  </div>
                                              </div>
 
-                                             <!-- <div role="tabpanel" class="tab-pane fade in" id="sign_in">
-                                                  <form action="#" method="post">
-                                                       <input type="email" class="form-control" name="email"
-                                                            placeholder="Email" required>
-                                                       <input type="password" class="form-control" name="password"
-                                                            placeholder="Password" required>
-                                                       <input type="submit" class="form-control" name="submit"
-                                                            value="Submit Button">
-                                                       <a href="https://www.facebook.com/templatemo">Forgot your
-                                                            password?</a>
-                                                  </form>
-                                             </div> -->
+
                                         </div>
                                    </div>
 
@@ -792,6 +816,9 @@ http://www.templatemo.com/tm-509-hydro
                $("#user-email").keyup(function () {
                     $(".email-req").html("")
                })
+               $("#user-location").keyup(function () {
+                    $(".location-req").html("")
+               })
                $("#user-deed").keyup(function () {
                     $('.character-number').html($('#user-deed').val().length).css({ 'font-size': '12px', 'color': 'forestgreen', 'margin': '0%', 'text-align': 'right', 'margin-left': '5px' })
                     if ($('#user-deed').val().length <= 288) {
@@ -818,16 +845,17 @@ http://www.templatemo.com/tm-509-hydro
                     var name = $('#user-name').val()
                     var imgUser = $('#img-user')[0]
                     var email = $('#user-email').val()
+                    var location = $('#user-location').val()
+                    // postDeed(name,email)
                     var validatedEmail = validateEmail(email)
                     var userDeed = $('#user-deed').val()
-                    var contact = $('#user-number').val()
                     var imgDeed = $('#img-deed')[0]
-                    console.log(name, imgUser.files.length, email, contact, imgDeed.files.length)
+                    console.log(name, imgUser.files.length, email, imgDeed.files.length)
 
 
-                    if (!name.replace(/\s/g, '').length == false && imgUser.files.length != 0 && validatedEmail && !userDeed.replace(/\s/g, '').length == false && !contact.replace(/\s/g, '').length == false && imgDeed.files.length != 0 && userDeed.length <= 288) {
+                    if (!name.replace(/\s/g, '').length == false && imgUser.files.length != 0 && !name.replace(/\s/g, '').length == false && validatedEmail && !userDeed.replace(/\s/g, '').length == false && imgDeed.files.length != 0 && userDeed.length <= 288) {
                          console.log('good to post')
-                         postDeed()
+                         postDeed(name, email, imgUser, imgDeed, userDeed)
                     }
 
                     else {
@@ -844,6 +872,9 @@ http://www.templatemo.com/tm-509-hydro
                          if (!userDeed.replace(/\s/g, '').length) {
                               $('.user-deed-req').html('Please enter your deed').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
                          }
+                         if (!location.replace(/\s/g, '').length) {
+                              $('.location-req').html('Please enter your location').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         }
                          if (imgUser.files.length == 0) {
                               $('.img-user-req').html('Please upload your image').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
                          }
@@ -857,7 +888,48 @@ http://www.templatemo.com/tm-509-hydro
                     var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
                     return testEmail.test(t)
                }
+
+               function postDeed(name, email, location, imgUser, imgDeed, userDeed) {
+                    console.log('submitted')
+
+                    var entry = {
+                         name: name,
+                         email: email,
+                         location: location,
+                         imageUser: imgUser,
+                         imageDeed: imgDeed,
+                         deed: userDeed
+                    }
+                    // var formData = new FormData();
+                    // // formData.append("file", val1);
+                    // formData.append('name', name)
+                    // formData.append("email", email);
+                    // console.log("image-id =", val3)
+                    fetch(`${window.origin}/enterDeed`, {
+                         method: 'POST',
+                         credentials: 'include',
+                         body: JSON.stringify(entry),
+                         cache: 'no-cache',
+                         headers: new Headers({
+                              'content-type': 'application/json'
+                         })
+                    }).then(res => {
+                         console.log('result', res)
+                         if (res.status == 200) {
+                              console.log('success')
+                              $('#modal-form').modal('toggle');
+                         }
+                    })
+
+               }
           })
+
+
+
+
+     </script>
+
+     <script>
 
      </script>
 
@@ -934,6 +1006,11 @@ http://www.templatemo.com/tm-509-hydro
 
           console.log(html)
           $('.card-test').prepend(html)
+
+
+
+
+
 
 
      </script>
