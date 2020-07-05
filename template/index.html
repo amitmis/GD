@@ -19,6 +19,7 @@ http://www.templatemo.com/tm-509-hydro
      <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
      <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }} ">
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 
 
@@ -160,6 +161,7 @@ http://www.templatemo.com/tm-509-hydro
                                    data-target="#modal-form">Post Deed</a></li>
                          <!-- <li><a href=""><button class="btn btn-md">Post Deed</button></a></li> -->
                     </ul>
+
                </div>
 
           </div>
@@ -252,6 +254,10 @@ http://www.templatemo.com/tm-509-hydro
                                    platform someone in Banglore can get inspired and do the same.</p>
                               <p>Life is too short for regrets, be a part of our gooddeeder community now.</p>
                          </div>
+                    </div>
+
+                    <div>
+
                     </div>
 
                     <div class="col-md-3 col-sm-6">
@@ -681,7 +687,7 @@ http://www.templatemo.com/tm-509-hydro
                                                             <label class="modal-label-upload-photo" for="img">Upload
                                                                  your photo</label>
                                                             <input class="modal-upload-photo" type="file" id="img-user"
-                                                                 name="img-user" accept="image/*">
+                                                                 name="img" accept="image/*">
                                                             <p class="img-user-req"></p>
 
                                                        </div>
@@ -699,7 +705,7 @@ http://www.templatemo.com/tm-509-hydro
 
 
                                                        <textarea class="form-control" id="user-deed" rows="5"
-                                                            placeholder="Enter your good deed"></textarea>
+                                                            placeholder="Enter your good deed" name ="desc"></textarea>
                                                        <p class="total-ch">Characters:<span
                                                                  class="character-number"></span></p>
                                                        <p class="user-deed-req"></p>
@@ -710,7 +716,7 @@ http://www.templatemo.com/tm-509-hydro
                                                                  forget to upload a photo of
                                                                  your deed</label>
                                                             <input class="modal-upload-photo" type="file" id="img-deed"
-                                                                 name="img-deed" accept="image/*">
+                                                                 name="img1" accept="image/*">
 
                                                             <p class="img-deed-req"></p>
 
@@ -733,6 +739,8 @@ http://www.templatemo.com/tm-509-hydro
                </div>
           </div>
      </section>
+
+
 
      <!-- SCRIPTS -->
      <script src="{{ url_for('static', filename='js/jquery.js') }} "></script>
