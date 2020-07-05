@@ -432,14 +432,6 @@ http://www.templatemo.com/tm-509-hydro
 
           </div>
      </section>
-     <div class="container">
-                         {% for i in data %}
-                              <h1>{{i.fname}}</h1>
-                              <h1>{{i.Name}}</h1>
-                              <h1>{{i.Date}}</h1>
-                              <img src="{{ url_for('static',filename=i.fname)}}">
-                         {% endfor %}
-     </div>
 
 
      <!-- WORK -->
@@ -721,11 +713,7 @@ http://www.templatemo.com/tm-509-hydro
      <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
 
-     <script>
-            $('#alert').click(function(){
-                         swal("Good job!", "You clicked the button!", "success");
-                        });
-     </script>
+
 
 
 </body>
