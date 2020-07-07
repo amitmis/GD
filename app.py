@@ -72,10 +72,10 @@ def enterDeed():
 
     language = request.args.get('name')  # if key doesn't exist, returns None
     x= json.dumps(json_data, indent=4, sort_keys=True, default=str)
-    print(x)
+
 
     return json.dumps(json_data, indent=4, sort_keys=True, default=str)
-    # return "hi"
+
 
 
 app.run(debug=True)
