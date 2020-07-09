@@ -26,6 +26,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/deeds'
 app.config['UPLOAD_FOLDER'] = '//home//amit//Gooddeeds//GD//static//uploads//deed_img'
 app.config['UPLOAD_FOLDER1'] = '//home//amit//Gooddeeds//GD//static//uploads//profile_img'
 dbconn = pymysql.connect("localhost","root","","deeds")
+cursor = dbconn.cursor()
 db = SQLAlchemy(app)
 
 class Deed_post(db.Model):
@@ -34,63 +35,47 @@ class Deed_post(db.Model):
     Email = db.Column(db.String(12),primary_key=True,nullable=False)
     Text = db.Column(db.String(120), nullable=False)
     Date = db.Column(db.String(12), nullable=True)
-    fname= db.Column(db.String(60), nullable=True)
-    pname = db.Column(db.String(60), nullable=True)
+    # fname= db.Column(db.String(60), nullable=True)
+    # pname = db.Column(db.String(60), nullable=True)
     S_NO =  db.Column(db.Integer, nullable=True)
     # Contact = db.Column(db.String(12), nullable=True)
-
+    Location = db.Column(db.String(60), nullable=True)
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
 
-
-
-
-@app.route("/contact", methods = ['GET', 'POST'])
-def contact():
-    # try:
-    if(request.method=='POST'):
-        '''Add entry to the database'''
-        name = request.form.get('name')
-        email = request.form.get('email')
-        desc= request.form.get('desc')
-        f = request.files['img']
-        f1 = request.files['img1']
-        n = f.filename
-        n1 = f1.filename
-        f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
-        f1.save(os.path.join(app.config['UPLOAD_FOLDER1'], secure_filename(f1.filename)))
-        # phone = request.form.get('phone')
-        entry = Deed_post(Name=name, Text = desc,Email = email,Date= datetime.now(), fname=n,pname=n1)
-        db.session.add(entry)
-        db.session.commit()
-        # data = Deed_post.query.order_by(-Deed_post.S_NO).first()
-        data = Deed_post.query.all()
-        # abc = dict(data)
-
-
-
-        # mail.send_message('You are doing Great ' + name + " !",
-        #                   sender=email,
-        #                   recipients=[email],
-        #                   body= "Hi " + name + "!" +  "\n May your kindness and generosity return to you a hundredfold. \n You are such a wonderful blessing to many people. \n Thank you so much, and may you continue your good work every single day. There are not enough words that can express just how much we appreciate your kindness and generosity\n\n\n With Care \n Team  Gooddeeds" )
-    return render_template("index_1.html",data = data)
-    # except:
-    #     return render_template('404.html')
-
 @app.route('/enterDeed', methods = ['POST'])
 def enterDeed():
+    # req = request.get_json()
+    name = request.form['name']
+    email = request.form['email']
+    location = request.form['location']
+    # deed = request.form['userDeed']
+    userDeed = request.form['deed']
+    userImage = request.file['imageUser']
+    deedImage = request.file['imageDeed']
+    # os.path.join(base_path + "/static/images", file.filename)
+    # file.save(file_path)
+    entry = Deed_post(Name=name, Text=userDeed, Email=email, Date=datetime.now(),Location=location)
+    db.session.add(entry)
+    db.session.commit()
+    print(name, email,location)
+    cursor.execute("select * from deed_post")
+    res = cursor.fetchall()
 
-    req = request.get_json()
+    row_headers = [x[0] for x in cursor.description]  # this will extract row headers
+    json_data = []
+    for result in res:
+        json_data.append(dict(zip(row_headers, result)))
 
-    print(req)
-
-    res = make_response(jsonify({'message':'JSON Received'}),200)
-
-    return res
+    language = request.args.get('name')  # if key doesn't exist, returns None
+    x= json.dumps(json_data, indent=4, sort_keys=True, default=str)
 
 
+    return json.dumps(json_data, indent=4, sort_keys=True, default=str)
 
-app.run(port=5012,debug=True)
+
+
+app.run(debug=True)
