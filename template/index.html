@@ -18,6 +18,12 @@ http://www.templatemo.com/tm-509-hydro
      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
      <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
      <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }} ">
+     <link href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Julee&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap" rel="stylesheet">
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -113,6 +119,25 @@ http://www.templatemo.com/tm-509-hydro
                background-repeat: no-repeat;
                height: 20vh;
           }
+
+        p {
+               font-family: 'Fondamento', cursive;
+
+
+          }
+          .post-date {
+               font-family: 'Offside', cursive;
+          }
+          .logo-font {
+               font-family: 'Monoton', cursive;
+          }
+          .quote-top {
+               font-family: 'Rajdhani', sans-serif;
+          }
+           .deeder-name, .deeder-location {
+               font-family: 'Sofadi One', cursive;
+
+           }
      </style>
 </head>
 
@@ -138,7 +163,7 @@ http://www.templatemo.com/tm-509-hydro
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <div><a href="index.html" class="navbar-brand">
+                    <div class = "logo-font"><a href="index.html" class="navbar-brand">
                               Gooddeed</a></div>
 
                </div>
@@ -364,7 +389,7 @@ http://www.templatemo.com/tm-509-hydro
                     {% for i in data %}
                     <div class="row">
                          <div class="col-md-2">
-                              <img class="profile-img" src="{{ url_for('static',filename=i.fname)}}"
+                              <img class="profile-img" src="static/uploads/profile_img/{{ i.Usr_Img }}"
                                    alt="User Profile Image">
                          </div>
                          <div class="col-md-10">
@@ -372,109 +397,23 @@ http://www.templatemo.com/tm-509-hydro
                                    <div>
                                         <p class="deeder-name">{{i.Name}}<span class="post-date">{{i.Date}}</span>
                                         </p>
+                                        <span class="deeder-location"> {{i.Location}} </span>
                                    </div>
                                    <p class="deed-desc">{{i.Text}}
                                    </p>
-                                   <p class="deed-img"><img src="{{ url_for('static',filename=i.fname)}}" alt=""></p>
+                                   <p class="deed-img"><img src="static/uploads/deed_img/{{ i.Deed_Img }}" alt=""></p>
+
 
                               </div>
                          </div>
                     </div>
-
+                    <hr>
                     {% endfor %}
 
-                    <div class="row">
-                         <div class="col-md-2">
-                              <img class="profile-img" src="static/images/gd1.png" alt="" srcset="">
-                         </div>
-                         <div class="col-md-10">
-                              <div style="text-align: left;">
-                                   <div>
-                                        <p class="deeder-name">Prashant Awasthi <span class="post-date">23/jun</span>
-                                        </p>
-                                        <span class="deeder-location">Kanpur</span>
-                                   </div>
-                                   <p class="deed-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni
-                                        quis omnis repellat! Quia sequi necessitatibus adipisci iste eos eius impedit
-                                        architecto voluptate. Veniam maxime ratione deserunt vitae quaerat doloremque
-                                        facere.
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi tempora quae
-                                        nemo qui dicta, sapiente veniam tenetur nulla at expedita, ducimus reprehenderit
-                                        maxime officiis ipsam, facere adipisci illo vel dolores.
-                                   </p>
-                                   <p class="deed-img"><img src="static/images/hex.png" alt=""></p>
 
-
-                              </div>
-                         </div>
-                    </div>
-                    <hr>
-
-                    <div class="row">
-                         <div class="col-md-2">
-                              <img class="profile-img" src="static/images/gd1.png" alt="" srcset="">
-                         </div>
-                         <div class="col-md-10 new-post">
-                              <div style="text-align: left;">
-                                   <div>
-                                        <p class="deeder-name">Prashant Awasthi <span class="post-date">23/jun</span>
-                                        </p>
-                                   </div>
-                                   <p class="deed-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Magni
-                                        quis omnis repellat! Quia sequi necessitatibus adipisci iste eos eius
-                                        impedit
-                                        architecto voluptate. Veniam maxime ratione deserunt vitae quaerat
-                                        doloremque
-                                        facere.
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi tempora
-                                        quae
-                                        nemo qui dicta, sapiente veniam tenetur nulla at expedita, ducimus
-                                        reprehenderit
-                                        maxime officiis ipsam, facere adipisci illo vel dolores.
-                                   </p>
-                                   <p class="deed-img"><img src="static/images/hex.png" alt=""></p>
-
-
-                              </div>
-                         </div>
-                    </div>
-                    <hr>
-
-                    <div class="row">
-                         <div class="col-md-2">
-                              <img class="profile-img" src="static/images/gd1.png" alt="" srcset="">
-                         </div>
-                         <div class="col-md-10 new-post">
-                              <div style="text-align: left;">
-                                   <div>
-                                        <p class="deeder-name">Prashant Awasthi <span class="post-date">23/jun</span>
-                                        </p>
-                                   </div>
-                                   <p class="deed-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Magni
-                                        quis omnis repellat! Quia sequi necessitatibus adipisci iste eos eius
-                                        impedit
-                                        architecto voluptate. Veniam maxime ratione deserunt vitae quaerat
-                                        doloremque
-                                        facere.
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi tempora
-                                        quae
-                                        nemo qui dicta, sapiente veniam tenetur nulla at expedita, ducimus
-                                        reprehenderit
-                                        maxime officiis ipsam, facere adipisci illo vel dolores.
-                                   </p>
-                                   <p class="deed-img"><img src="static/images/hex.png" alt=""></p>
-
-
-                              </div>
-                         </div>
-                    </div>
 
                </div>
 
-
-          </div>
      </section>
 
 
@@ -830,14 +769,14 @@ http://www.templatemo.com/tm-509-hydro
                })
                $("#user-deed").keyup(function () {
                     $('.character-number').html($('#user-deed').val().length).css({ 'font-size': '12px', 'color': 'forestgreen', 'margin': '0%', 'text-align': 'right', 'margin-left': '5px' })
-                    if ($('#user-deed').val().length <= 288) {
-                         $('.user-deed-req').html('Please enter your deed in less than 289 characters').css({ 'font-size': '12px', 'color': 'forestgreen', 'margin': '1%', 'text-align': 'justify' })
+                    if ($('#user-deed').val().length <= 500) {
+                         $('.user-deed-req').html('Please enter your deed in less than 500 characters').css({ 'font-size': '12px', 'color': 'forestgreen', 'margin': '1%', 'text-align': 'justify' })
                          $('.total-ch').css({ 'color': 'forestgreen' })
                          $('.character-number').css({ 'color': 'forestgreen' })
 
                     }
                     else {
-                         $('.user-deed-req').html('Limit exceeded - More than 288 characters').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         $('.user-deed-req').html('Limit exceeded - More than 500 characters').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
                          $('.total-ch').css({ 'color': 'red' })
                          $('.character-number').css({ 'color': 'red' })
                     }
@@ -868,15 +807,15 @@ http://www.templatemo.com/tm-509-hydro
                     console.log(name, imgUser.files[0], email, imgDeed.files[0], userDeed)
 
 
-                    if (!name.replace(/\s/g, '').length == false &&  !name.replace(/\s/g, '').length == false && validatedEmail && !userDeed.replace(/\s/g, '').length == false &&  userDeed.length <= 288) {
+                    if (!name.replace(/\s/g, '').length == false &&  !name.replace(/\s/g, '').length == false && validatedEmail && !userDeed.replace(/\s/g, '').length == false &&  userDeed.length <= 500) {
                          console.log('good to post')
                          postDeed(name, email, location, imgUser.files[0], imgDeed.files[0], userDeed)
                     }
 
                     else {
                          console.log('something missing')
-                         if (userDeed.length > 288) {
-                              $('.user-deed-req').html('Enter deed in less than 288 characters').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
+                         if (userDeed.length > 500) {
+                              $('.user-deed-req').html('Enter deed in less than 500 characters').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
                          }
                          if (!name.replace(/\s/g, '').length) {
                               $('.name-req').html('Name cannot be empty').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
@@ -932,11 +871,17 @@ http://www.templatemo.com/tm-509-hydro
                          // headers: new Headers({
                          //      'content-type': 'application/json'
                          // })
-                    }).then(res => {
-                         console.log('result', res)
-                         if (res.status == 200) {
+                    }).then(res => res.json()).then((res)=> {
+
+                         console.log(res)
+
+                         if (res.message == 'JSON Received') {
                               console.log('success')
                               $('#modal-form').modal('toggle');
+                              swal("Good job!", "Data Submitted!!", "success");
+
+
+                              window.location = "/";
                          }
                     })
 
@@ -999,40 +944,7 @@ http://www.templatemo.com/tm-509-hydro
           });
      </script>
 
-     <script>
-          // automatic deed posting script
 
-          var deed = { 'name': 'Test Testing', 'location': 'Delhi', 'date': '28/June/2020', 'pImage': 'static/images/gd1.png', 'dImage': 'static/images/hex.png', 'deed': 'lorem ipsum text' }
-
-          var html = '<div class="row">' +
-               '<div class="col-md-2">' +
-               '<img class="profile-img" src=' + '"' + deed.pImage + '"' + ' alt="" srcset="">' +
-               '</div>' +
-               '<div class="col-md-10 new-post">' +
-               '<div style="text-align: left;">' +
-               '<div>' +
-               ' <p class="deeder-name">' + deed.name + ' <span class="post-date">' + deed.date + '</span>' +
-               '</p>' + '<span class="deeder-location">'+ deed.location +'</span>' +
-               '</div>' +
-               '<p class="deed-desc">' + deed.deed +
-               '</p>' +
-               '<p class="deed-img"><img src=' + '"' + deed.dImage + '"' + 'alt=""></p>' +
-
-
-               '</div>' +
-               '</div>' +
-               '</div>' + '<hr>'
-
-          console.log(html)
-          $('.card-test').prepend(html)
-
-
-
-
-
-
-
-     </script>
 
 
 
