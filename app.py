@@ -25,28 +25,29 @@ mail = Mail(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/deeds'
 app.config['UPLOAD_FOLDER'] = '//home//amit//Gooddeeds//GD//static//uploads//profile_img'
 app.config['UPLOAD_FOLDER1'] = '//home//amit//Gooddeeds//GD//static//uploads//deed_img'
-dbconn = pymysql.connect("localhost","root","","deeds")
-cursor = dbconn.cursor()
-db = SQLAlchemy(app)
+# dbconn = pymysql.connect("localhost","root","","deeds")
+# cursor = dbconn.cursor()
+# db = SQLAlchemy(app)
 
-class Deed_post(db.Model):
+# class Deed_post(db.Model):
 
-    Name = db.Column(db.String(80), nullable=False)
-    Email = db.Column(db.String(12),primary_key=True,nullable=False)
-    Text = db.Column(db.String(120), nullable=False)
-    Date = db.Column(db.String(12), nullable=True)
-    Usr_Img= db.Column(db.String(60), nullable=True)
-    Deed_Img = db.Column(db.String(60), nullable=True)
-    S_NO =  db.Column(db.Integer, nullable=True)
-    # Contact = db.Column(db.String(12), nullable=True)
-    Location = db.Column(db.String(60), nullable=True)
+#     Name = db.Column(db.String(80), nullable=False)
+#     Email = db.Column(db.String(12),primary_key=True,nullable=False)
+#     Text = db.Column(db.String(120), nullable=False)
+#     Date = db.Column(db.String(12), nullable=True)
+#     Usr_Img= db.Column(db.String(60), nullable=True)
+#     Deed_Img = db.Column(db.String(60), nullable=True)
+#     S_NO =  db.Column(db.Integer, nullable=True)
+#     # Contact = db.Column(db.String(12), nullable=True)
+#     Location = db.Column(db.String(60), nullable=True)
 @app.route("/")
 def home():
     # cursor.execute("select * from deed_post order by S_NO desc")
     # res = cursor.fetchall()
-    res = Deed_post.query.order_by(Deed_post.S_NO.desc()).all()
+    # res = Deed_post.query.order_by(Deed_post.S_NO.desc()).all()
 
-    return render_template("index.html",data=res)
+    # return render_template("index.html",data=res)
+    return render_template("index.html")
 
 
 
@@ -95,4 +96,4 @@ def enterDeed():
 
 
 
-app.run(debug=True)
+app.run(port=5012,debug=True)

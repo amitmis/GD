@@ -3,11 +3,8 @@
 
 <head>
 
-     <title>Hydro - Landing Page Template</title>
-     <!-- 
-Hydro Template 
-http://www.templatemo.com/tm-509-hydro
--->
+     <title>Gooddeed</title>
+    
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
      <meta name="description" content="">
@@ -32,7 +29,7 @@ http://www.templatemo.com/tm-509-hydro
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="{{ url_for('static',filename='css/templatemo-style.css') }} ">
      <style>
-          .character-number {
+          /* .character-number {
                float: right;
           }
 
@@ -137,19 +134,11 @@ http://www.templatemo.com/tm-509-hydro
            .deeder-name, .deeder-location {
                font-family: 'Sofadi One', cursive;
 
-           }
+           } */
      </style>
 </head>
 
 <body>
-
-     <!-- PRE LOADER -->
-     <!-- <section class="preloader">
-          <div class="spinner">
-               <span class="spinner-rotate"></span>
-          </div>
-     </section> -->
-
 
      <!-- MENU -->
      <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
@@ -163,7 +152,7 @@ http://www.templatemo.com/tm-509-hydro
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <div class = "logo-font"><a href="index.html" class="navbar-brand">
+                    <div class = "logo-font"><a href="/" class="navbar-brand">
                               Gooddeed</a></div>
 
                </div>
@@ -237,10 +226,10 @@ http://www.templatemo.com/tm-509-hydro
                </div>
                <div class="row">
                     <div class="col-md-6 col-sm-12 hidden-sm hidden-xs">
-                         <div class="deed-number-section ">
+                         <!-- <div class="deed-number-section ">
                               <p class="deed-number-text">Deeds shared till now:</p>
                               <p class="counter-count">234</p>
-                         </div>
+                         </div> -->
                     </div>
                     <div class="col-md-6 col-sm-12 gif-caption">
                          <p>Well ofcourse! Every good deed sends back a confetti shower of good vibes.
@@ -274,10 +263,10 @@ http://www.templatemo.com/tm-509-hydro
                                         <p class="underline-sec"></p>
                                    </span>
                               </div>
-                              <p>We provide you a platform to share your good deeds with the world. Inspiring people to
+                              <p class="we-do">We provide you a platform to share your good deeds with the world. Inspiring people to
                                    spread kindness is our aim. You do a good deed in Delhi and share, and through our
                                    platform someone in Banglore can get inspired and do the same.</p>
-                              <p>Life is too short for regrets, be a part of our gooddeeder community now.</p>
+                              <p class="we-do">Life is too short for regrets, be a part of our gooddeeder community now.</p>
                          </div>
                     </div>
 
@@ -310,6 +299,13 @@ http://www.templatemo.com/tm-509-hydro
                               </div>
 
                               <strong>Give alms to poor</strong>
+                              <!-- <span class="pull-right">70%</span> -->
+                              <div class="progress">
+                                   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                              </div>
+
+                              <strong>Make someone laugh</strong>
                               <!-- <span class="pull-right">70%</span> -->
                               <div class="progress">
                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70"
@@ -388,9 +384,11 @@ http://www.templatemo.com/tm-509-hydro
 
                     {% for i in data %}
                     <div class="row">
-                         <div class="col-md-2">
+                         <div class="col-md-2" style="display: inline-block;">
+                              <div class="profile-img" style="display: flex;">
                               <img class="profile-img" src="static/uploads/profile_img/{{ i.Usr_Img }}"
-                                   alt="User Profile Image">
+                                   alt="Profile Image">
+                                   </div>
                          </div>
                          <div class="col-md-10">
                               <div style="text-align: left;">
@@ -409,6 +407,84 @@ http://www.templatemo.com/tm-509-hydro
                     </div>
                     <hr>
                     {% endfor %}
+
+
+                    <div class="row">
+                         <div class="col-md-2" style="display: inline-block;">
+                              <div class="profile-img" style="display: flex;">
+                                   <img class="profile-img" src="static/images/home-bg.jpg"
+                                   alt="User Profile Image">
+                                   </div>
+                             
+                         </div>
+                         <div class="col-md-10">
+                              <div style="text-align: left;">
+                                   <div>
+                                        <p class="deeder-name">Prashant<span class="post-date">26/June</span>
+                                        </p>
+                                        <span class="deeder-location"> Kanpur </span>
+                                   </div>
+                                   <p class="deed-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum odio, quasi aperiam reprehenderit id obcaecati iste, quo nulla amet omnis ipsam neque ut? Commodi corporis esse repudiandae? Quibusdam, itaque similique! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, neque, rerum odio provident quibusdam dolore maiores quasi aliquid officia commodi nulla natus iusto deserunt, ea maxime iste ipsam recusandae delectus?
+                                   </p>
+                                   <p class="deed-img"><img src="static/images/hex2.png" alt=""></p>
+
+
+                              </div>
+                         </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                         <div class="col-md-2" style="display: inline-block;">
+                              <div class="profile-img" style="display: flex;">
+                                   <img class="profile-img" src="static/images/blog-image1.jpg"
+                                   alt="User Profile Image">
+                                   </div>
+                              <!-- <div class="profile-pic"></div> -->
+                              <!-- <img class="profile-img" src="static/images/blog-image1.jpg"
+                                   alt="User Profile Image"> -->
+                         </div>
+                         <div class="col-md-10">
+                              <div style="text-align: left;">
+                                   <div>
+                                        <p class="deeder-name">Prashant<span class="post-date">26/June</span>
+                                        </p>
+                                        <span class="deeder-location"> Kanpur </span>
+                                   </div>
+                                   <p class="deed-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum odio, quasi aperiam reprehenderit id obcaecati iste, quo nulla amet omnis ipsam neque ut? Commodi corporis esse repudiandae? Quibusdam, itaque similique! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, neque, rerum odio provident quibusdam dolore maiores quasi aliquid officia commodi nulla natus iusto deserunt, ea maxime iste ipsam recusandae delectus?
+                                   </p>
+                                   <p class="deed-img"><img src="static/images/blog-image1.jpg" alt=""></p>
+
+
+                              </div>
+                         </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                         <div class="col-md-2" style="display: inline-block;">
+                              <!-- <div class="profile-pic"></div> -->
+                              <div class="profile-img" style="display: flex;" >
+                              <img class="profile-img"  src=""
+                                   alt="Profile Image">
+                              </div>
+                         </div>
+                         <div class="col-md-10">
+                              <div style="text-align: left;">
+                                   <div>
+                                        <p class="deeder-name">Prashant<span class="post-date">26/June</span>
+                                        </p>
+                                        <span class="deeder-location"> Kanpur </span>
+                                   </div>
+                                   <p class="deed-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum odio, quasi aperiam reprehenderit id obcaecati iste, quo nulla amet omnis ipsam neque ut? Commodi corporis esse repudiandae? Quibusdam, itaque similique! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, neque, rerum odio provident quibusdam dolore maiores quasi aliquid officia commodi nulla natus iusto deserunt, ea maxime iste ipsam recusandae delectus?
+                                   </p>
+                                   <p class="deed-img"><img src="static/images/blog-image1.jpg" alt=""></p>
+
+
+                              </div>
+                         </div>
+                    </div>
+                    <hr>
 
 
 
@@ -571,9 +647,11 @@ http://www.templatemo.com/tm-509-hydro
                                         <p>Copyright &copy; 2020 Gooddeed</p>
                                    </div>
                               </div>
-                              <div class="col-md-6 col-sm-7">
+                              <div class="col-md-1"></div>
+                              <div class="col-md-5 col-sm-7">
                                    <div class="phone-contact">
-                                        <p>Call us <span>(+91) 6394774960</span></p>
+                                        <p>Call us: <span>(+91) 6394774960</span></p>
+                                        <p>Email: <span><a class="mail-link" href="mailto:infogooddeed@gmail.com">infogooddeed@gmail.com</a></span></p>
                                    </div>
                                    <ul class="social-icon">
                                         <!-- <li><a href="https://www.facebook.com/templatemo" class="fa fa-facebook-square"
@@ -614,7 +692,7 @@ http://www.templatemo.com/tm-509-hydro
 
                                         <div class="tab-content" style="padding: 0px;">
                                              <div role="tabpanel" class="tab-pane fade in active" id="sign_up">
-                                                  <!-- <form action="/contact" method="POST"  enctype="multipart/form-data"> -->
+                                                
 
 
                                                   <div>
@@ -781,39 +859,28 @@ http://www.templatemo.com/tm-509-hydro
                          $('.character-number').css({ 'color': 'red' })
                     }
                })
-               // $("#img-user").click(function () {
-               //      $(".img-user-req").html("")
-               // })
-               // $("#img-deed").click(function () {
-               //      $(".img-deed-req").html("")
-               // })
+              
 
                $(document).on('click', '#modal-post-btn', function () {
                     console.log('clicked')
-
-     //                var input1 = document.querySelector('#img-user')
-     // //    var data = new FormData()
-     //    console.log(input1.files[0])
-
 
                     var name = $('#user-name').val()
                     var imgUser = document.querySelector('#img-user')
                     var email = $('#user-email').val()
                     var location = $('#user-location').val()
-                    // postDeed(name,email)
                     var validatedEmail = validateEmail(email)
                     var userDeed = $('#user-deed').val()
                     var imgDeed = document.querySelector('#img-deed')
-                    console.log(name, imgUser.files[0], email, imgDeed.files[0], userDeed)
+                    // console.log(name, imgUser.files[0], email, imgDeed.files[0], userDeed)
 
 
                     if (!name.replace(/\s/g, '').length == false &&  !name.replace(/\s/g, '').length == false && validatedEmail && !userDeed.replace(/\s/g, '').length == false &&  userDeed.length <= 500) {
-                         console.log('good to post')
+                         // console.log('good to post')
                          postDeed(name, email, location, imgUser.files[0], imgDeed.files[0], userDeed)
                     }
 
                     else {
-                         console.log('something missing')
+                         // console.log('something missing')
                          if (userDeed.length > 500) {
                               $('.user-deed-req').html('Enter deed in less than 500 characters').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
                          }
@@ -829,12 +896,6 @@ http://www.templatemo.com/tm-509-hydro
                          if (!location.replace(/\s/g, '').length) {
                               $('.location-req').html('Please enter your location').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
                          }
-                         // if (imgUser.files.length == 0) {
-                         //      $('.img-user-req').html('Please upload your image').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
-                         // }
-                         // if (imgDeed.files.length == 0) {
-                         //      $('.img-deed-req').html('Please upload image of your deed').css({ 'font-size': '12px', 'color': 'red', 'margin': '1%', 'text-align': 'justify' })
-                         // }
                     }
                })
 
@@ -844,18 +905,11 @@ http://www.templatemo.com/tm-509-hydro
                }
 
                function postDeed(name, email, location, imgUser, imgDeed, userDeed) {
-                    console.log('submitted =', userDeed, imgUser)
+                    // console.log('submitted =', userDeed, imgUser)
+                    $("#modal-post-btn").html("Posting...");
 
-                    // var entry = {
-                    //      name: name,
-                    //      email: email,
-                    //      location: location,
-                    //      imageUser: imgUser,
-                    //      imageDeed: imgDeed,
-                    //      deed: userDeed
-                    // }
+                   
                     var formData = new FormData();
-                    // formData.append("file", val1);
                     formData.append('name', name)
                     formData.append("email", email);
                     formData.append("location", location);
@@ -865,22 +919,17 @@ http://www.templatemo.com/tm-509-hydro
                     fetch(`${window.origin}/enterDeed`, {
                          method: 'POST',
                          credentials: 'include',
-                         // body: JSON.stringify(entry),
                          body: formData,
                          cache: 'no-cache',
-                         // headers: new Headers({
-                         //      'content-type': 'application/json'
-                         // })
                     }).then(res => res.json()).then((res)=> {
 
                          console.log(res)
 
                          if (res.message == 'JSON Received') {
-                              console.log('success')
+                              // console.log('success')
+                              $("#modal-post-btn").html("Deed Posted")
                               $('#modal-form').modal('toggle');
-                              swal("Good job!", "Data Submitted!!", "success");
-
-
+                              swal("Good job!", "Deed Posted");
                               window.location = "/";
                          }
                     })
